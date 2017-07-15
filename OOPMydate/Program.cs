@@ -10,6 +10,14 @@ namespace OOPMydate
     {
         static void Main(string[] args)
         {
+            MyDate test = new MyDate(2012, 3, 31);
+            bool obj;
+
+            obj = test.isLeapYear(2012);
+            
+            Console.WriteLine(test.nextDay());
+            Console.WriteLine(test.nextMonth());
+            Console.ReadKey();
         }
     }
 }

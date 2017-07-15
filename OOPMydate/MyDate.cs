@@ -33,7 +33,7 @@ namespace OOPMydate
             {
                 return true;
             }
-            else if (month <= 1 && month >= 12)
+            else if (month >= 1 && month <= 12)
             {
                 return true;
             }
@@ -212,8 +212,6 @@ namespace OOPMydate
         public MyDate previousYear()
         {
             return this;
-        }
-
-        
+        }       
     }
 }
