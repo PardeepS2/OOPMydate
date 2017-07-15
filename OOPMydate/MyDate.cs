@@ -44,19 +44,19 @@ namespace OOPMydate
             else
             {
                 return false;
-            }               
+            }
             Console.WriteLine("The date is valid");
             return true;
         }
 
         public int getDayOfWeek(int year, int month, int day)
         {
-             return this.year;
-             return this.month;
-             return this.day;
+            return this.year;
+            return this.month;
+            return this.day;
         }
 
-        public MyDate (int year, int month, int day)
+        public MyDate(int year, int month, int day)
         {
             this.year = year;
             this.month = month;
@@ -115,25 +115,52 @@ namespace OOPMydate
                 {
                     month = 1;
                     year++;
-                    if(year>=1 && year <= 9999)
+                    if (year >= 1 && year <= 9999)
                     {
                         year++;
                     }
                 }
             }
-            return this;           
+            return this;
         }
 
         public MyDate nextMonth()
         {
-            if (month>= 1 && month <= 12)
+            if (month >= 1 && month <= 12)
             {
-                month++;
-                day = 1;
+                month = 1;
+                year++;
 
-                if (day >= 31)
+                if (year >= 1 && year <= 9999)
                 {
+                    year++;
 
+                    if (day >= 31)
+                    {
+                        day = 1;
+                        month++;
+                    }
+                }
+            }
+            return this;
+        }
+
+        public MyDate nextYear()
+        {
+            if(year >= 1 && year <= 9999)
+            {
+                year++;
+                month = 1;
+                
+                if(day >= 31)
+                {
+                    day = 1;
+                    month++;
+
+                       if (month>=1 && month <= 12)
+                    {
+                        month++;
+                    }
                 }
             }
             return this;
