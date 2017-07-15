@@ -8,9 +8,9 @@ namespace OOPMydate
 {
     class MyDate
     {
-        private int year;
-        private int month;
-        private int day;
+        private int year =1;
+        private int month =1;
+        private int day =1;
         private string[] strMonths = { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
                                        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
         private string[] strDays = { "Sunday", "Monday", "Tuesday", "Wednesday"
@@ -165,5 +165,55 @@ namespace OOPMydate
             }
             return this;
         }
+
+        public MyDate previousDay()
+        {
+            if (day == 1)
+            {
+                day = 31;
+                year--;
+
+                if (year == 9999)
+                {
+                    year--;
+
+                    if (month == 1)
+                    {
+                        month = 12;
+                    }
+                }
+            }
+
+            return this;
+        }
+
+        public MyDate previousMonth()
+        {
+            if (month == 1)
+            {
+                month = 12;
+                year--;
+
+                if (year == 9999)
+                {
+                    year--;
+                    day = 31;
+                    
+                    if(day == 1)
+                    {
+                        day = 31;
+                        
+                    }
+                }
+            }
+            return this;
+        }
+
+        public MyDate previousYear()
+        {
+            return this;
+        }
+
+        
     }
 }
